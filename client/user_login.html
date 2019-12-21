@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form action = "http://127.0.0.1:8081/process_get" method = "GET" novalidate>
+    Name:<br>
+    <input type="text" name="name" ng-model="user.Name"><br>
+    UID (AAdhar Number):<br>
+    <input type="text" name="uid" ng-model="user.uid"><br>
+    Password : 
+    <input type="password" name="password" ng-model="user.password"><br>
+    Mobile Number:
+    <input type="text" name="mobile" ng-model="user.mobile"><br>
+    Email Address:
+    <input type="text" name="email" ng-model="user.email"><br>
+    <br><br>
+    <input type = "submit" ng-click="submit()" value = "Submit">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+</div>
+
+<script src="user_login.js"></script>
+
+</body>
+</html>
