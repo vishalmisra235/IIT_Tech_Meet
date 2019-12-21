@@ -14,15 +14,18 @@
 body {
  background-color: #c8ded1;
 }
+div{
+	text-align: center;
+}
 </style>
 
 <body ng-app="MasterApplication">
 	<div ng-controller="MainControl" class="container">
 		<div class="page-header"><h1>Choose your department</h1></div>
-		<div class="container btn-group btn-group-lg">
+		<div class="container btn-group btn-group-lg"><div>
 				<button ng-click="government()" class="btn btn-primary">Government</button>
 				<button ng-click="contractor()" class="btn btn-primary">Contractor</button>
-				<button ng-click="user()" class="btn btn-primary">User</button>
+				<button ng-click="user()" class="btn btn-primary">User</button></div>
 			
 		</div></div>
 		<script src="home.js"></script>
