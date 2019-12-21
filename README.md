@@ -31,7 +31,7 @@
 
 ### Solution attempted
 
-Because it should be portable device friendly(5) and it has to be accessible to government officials who work on personal computers, we have decided that it should be a web application. Building mobile app isn’t practical here because Government officials work on personal computers.
+Because it should be portable device friendly and it has to be accessible to government officials who work on personal computers, we have decided that it should be a web application. Building mobile app isn’t practical here because Government officials work on personal computers.
 
 It is required that we have to reduce the manual visits of government officials to the construction site but they have to also know the progress of the construction. For this, it is not practical to rely on public to give survey about the progress of construction to the officials. We also can’t completely rely on the contractor too because that is his work he his giving survey about.
 
