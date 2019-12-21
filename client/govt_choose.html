@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choice</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="govtCtrl" class="Choose">
+		<h1>What do you want to do?</h1>
+		<button ng-click="addOfficial()" class="btn btn-default">Add Official</button>
+  		<button ng-click="addContractor()" class="btn btn-default">Add Contractor</button>
+  		<button ng-click="progress()" class="btn btn-default">Check Progress of the Roads</button>
+  		<button ng-click="mantainance()" class="btn btn-default">Check Mantainance of the Roads</button>
+  		<script src="choose.js"></script>
+	</div>
+</body>
+</html>>
