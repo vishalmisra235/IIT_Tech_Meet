@@ -20,31 +20,31 @@ var nameSchema = new mongoose.Schema({
 });
 
 var User = mongoose.model("User", nameSchema);
-var Govt = mongoose.model("Govt", nameSchema);
 
 app.use(express.static('public'));
 
-app.get('/user_signup_get', function (req, res) {
+app.post('/user_signup_get', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
    response = {
-      name:req.query.name,
-      uid:req.query.uid,
-      password: req.query.password,
-      mobile: req.query.mobile,
-      email: req.query.email
+      name:req.body.name,
+      uid:req.body.uid,
+      password: req.body.password,
+      mobile: req.body.mobile,
+      email: req.body.email
    };
    var myData = new User(response);
    myData.save()
    .then(item => {
-   	res.send("item saved");
+   	//res.send("item saved");
+      res.sendFile(__dirname + "/client/" +"user.html");
    	console.log("item save");
    })
    .catch(err => {
-   	res.status(400).send("unable");
+   	// res.status(400).send("unable");
    	console.log("errorrr");
    });
    console.log(response);
-   res.sendFile(__dirname + "/client/" +"user.html");
+   
 });
 
 app.post('/user_login_get', urlencodedParser, function (req, res) {
@@ -69,7 +69,7 @@ app.post('/user_login_get', urlencodedParser, function (req, res) {
        for (index = 0; index < result.length; index++) { 
          if(response.email == result[index].email && response.password == result[index].password){
             console.log("fghjk");
-            res.sendFile(__dirname + "/client/" +"user_signup.html");
+            res.sendFile(__dirname + "/client/" +"user_page.html");
             flag = true;
          }
        } 
@@ -93,19 +93,19 @@ var govtSchema = new mongoose.Schema({
 
 var Govt = mongoose.model("Govt", nameSchema);
 
-app.get('/govt_signup_get', function (req, res) {
+app.post('/govt_signup_get', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
    response = {
-      name:req.query.name,
-      oid:req.query.oid,
-      password: req.query.password,
-      mobile: req.query.mobile,
-      email: req.query.email
+      name:req.body.name,
+      oid:req.body.oid,
+      password: req.body.password,
+      mobile: req.body.mobile,
+      email: req.body.email
    };
    var myData = new Govt(response);
    myData.save()
    .then(item => {
-      res.send("item saved");
+      //res.send("item saved");
       console.log("item save");
    })
    .catch(err => {
@@ -113,7 +113,7 @@ app.get('/govt_signup_get', function (req, res) {
       console.log("errorrr");
    });
    console.log(response);
-   res.sendFile(__dirname + "/client/" +"govt.html");
+   res.sendFile(__dirname + "/client/" +"govt_choose.html");
 });
 
 
@@ -133,14 +133,14 @@ app.post('/govt_login_get', urlencodedParser, function (req, res) {
 
      var db = client.db('hackathon')
 
-     db.collection('govt').find().toArray(function (err, result) {
+     db.collection('govts').find().toArray(function (err, result) {
        if (err) throw err
 
        var flag = false;
        for (index = 0; index < result.length; index++) { 
          if(response.email == result[index].email && response.password == result[index].password){
             console.log("fghjk");
-            res.sendFile(__dirname + "/client/" +"official_signup.html");
+            res.sendFile(__dirname + "/client/" +"govt_choose.html");
             flag = true;
          }
        } 
@@ -167,19 +167,19 @@ var contSchema = new mongoose.Schema({
 
 var Cont = mongoose.model("Cont", nameSchema);
 
-app.get('/cont_signup_get', function (req, res) {
+app.post('/cont_signup_get', function (req, res) {
    // Prepare output in JSON format
    response = {
-      name:req.query.name,
-      cid:req.query.cid,
-      password: req.query.password,
-      mobile: req.query.mobile,
-      email: req.query.email
+      name:req.body.name,
+      cid:req.body.cid,
+      password: req.body.password,
+      mobile: req.body.mobile,
+      email: req.body.email
    };
    var myData = new Cont(response);
    myData.save()
    .then(item => {
-      res.send("item saved");
+      //res.send("item saved");
       console.log("item save");
    })
    .catch(err => {
@@ -207,11 +207,12 @@ app.post('/cont_login_get', urlencodedParser, function (req, res) {
 
      var db = client.db('hackathon')
 
-     db.collection('cont').find().toArray(function (err, result) {
+     db.collection('conts').find().toArray(function (err, result) {
        if (err) throw err
 
        var flag = false;
        for (index = 0; index < result.length; index++) { 
+         console.log("df");
          if(response.email == result[index].email && response.password == result[index].password){
             console.log("fghjk");
             res.sendFile(__dirname + "/client/" +"contractor_signup.html");
