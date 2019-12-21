@@ -15,7 +15,7 @@ body {
 
 <div ng-app="myApp" ng-controller="formCtrl" class="user_signup">
     <h1 class="page-header">Please Enter Contractor Details</h1>
-  <form action = "http://127.0.0.1:8081/process_get" method = "GET" novalidate class="form-horizontal">
+  <form action = "http://127.0.0.1:8081/cont_signup_get" method = "GET" novalidate class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-sm-4" for="Name">Name</label>
         <div class="col-sm-4">
@@ -25,7 +25,7 @@ body {
     <div class="form-group">
         <label class="control-label col-sm-4" for="Name">Contractor Unique ID</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="UID" placeholder="Enter Official ID" name="oid" ng-model="cont.oid">
+            <input type="text" class="form-control" id="UID" placeholder="Enter Official ID" name="cid" ng-model="cont.oid">
         </div>
     </div>
     <div class="form-group">
