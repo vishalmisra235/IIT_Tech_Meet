@@ -3,18 +3,29 @@
 <head>
 	<title>Front Page</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
 </head>
+<style >
+body {
+ background-color: #c8ded1;
+}
+</style>
+
 <body ng-app="MasterApplication">
-	<div ng-controller="MainControl" class="master">
-		<h1>Choose Your Department</h1>
-		<button ng-click="government()" class="btn btn-default">Government</button>
-  		<button ng-click="contractor()" class="btn btn-default">Contractor</button>
-  		<button ng-click="user()" class="btn btn-default">User</button>
-  		<script src="home.js"></script>
+	<div ng-controller="MainControl" class="container">
+		<div class="page-header"><h1>Choose your department</h1></div>
+		<div class="container btn-group btn-group-lg">
+				<button ng-click="government()" class="btn btn-primary">Government</button>
+				<button ng-click="contractor()" class="btn btn-primary">Contractor</button>
+				<button ng-click="user()" class="btn btn-primary">User</button>
+			
+		</div></div>
+		<script src="home.js"></script>
 	</div>
 </body>
 </html>
