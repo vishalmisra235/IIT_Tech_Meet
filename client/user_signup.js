@@ -1,13 +1,5 @@
-var myApp = angular.module('myApp',[]);
-myApp.controller('userCtrl', function ($scope) {
-    $scope.submit = function(){
-    	var path = window.location.pathname;
-     	var pos = path.lastIndexOf("/");
-     	var p = path.slice(0,pos+1);
-     	var new_path = p+'user_signup.html';
-     	window.location.replace(new_path);
-     	console.log(p);
-    };
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
     $scope.home = function(){
     	var path = window.location.pathname;
      	var pos = path.lastIndexOf("/");
@@ -16,4 +8,4 @@ myApp.controller('userCtrl', function ($scope) {
      	window.location.replace(new_path);
      	console.log(p);
     };
-  });
+});
