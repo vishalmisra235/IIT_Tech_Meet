@@ -8,27 +8,38 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
+    <script type="text/javascript">
       var myApp = angular.module('myApp',[]);
       myApp.controller('govtCtrl', function ($scope) {
           $scope.showModal = false;
-          $scope.addOfficial = function(){
-            var path = window.location.pathname;
-            var pos = path.lastIndexOf("/");
-            var p = path.slice(0,pos+1);
-            var new_path = p+'official_signup.html';
-            window.location.replace(new_path);
-            console.log(p);
-          };
+          // $scope.assignRoad = function(){
+          //   console.log("asd");
+          //   var path = window.location.pathname;
+          //   var pos = path.lastIndexOf("/");
+          //   var p = path.slice(0,pos+1);
+          //   var new_path = p+'assign_road.html';
+          //   console.log(new_path);
+          //   window.location.replace(new_path);
+          //   console.log(p);
+          // };
 
-          $scope.addContractor = function(){
-            var path = window.location.pathname;
-            var pos = path.lastIndexOf("/");
-            var p = path.slice(0,pos+1);
-            var new_path = p+'contractor_signup.html';
-            window.location.replace(new_path);
-            console.log(p);
-          };
+          // $scope.addOfficial = function(){
+          //   var path = window.location.pathname;
+          //   var pos = path.lastIndexOf("/");
+          //   var p = path.slice(0,pos+1);
+          //   var new_path = p+'official_signup.html';
+          //   window.location.replace(new_path);
+          //   console.log(p);
+          // };
+
+          // $scope.addContractor = function(){
+          //   var path = window.location.pathname;
+          //   var pos = path.lastIndexOf("/");
+          //   var p = path.slice(0,pos+1);
+          //   var new_path = p+'contractor_signup.html';
+          //   window.location.replace(new_path);
+          //   console.log(p);
+          // };
 
           $scope.progress = function(){
               $scope.showModal = true;
@@ -93,17 +104,30 @@
     </script>
 </head>
 <body ng-app="myApp">
-	<div ng-controller="govtCtrl" class="Choose">
-		<h1>What do you want to do?</h1>
-		<button ng-click="addOfficial()" class="btn btn-default">Add Official</button>
-  		<button ng-click="addContractor()" class="btn btn-default">Add Contractor</button>
-  		<button ng-click="progress()" class="btn btn-default">Check Progress of the Roads</button>
-  		<button ng-click="mantainance()" class="btn btn-default">Check Mantainance of the Roads</button>
+  <h1 style="display:flex; flex-direction: row; justify-content: center; align-items: center">What do you want to do?</h1>
+	<div ng-controller="govtCtrl" class="Choose" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+    <form role="form" action = "http://127.0.0.1:8081/button_assign_road" method = "POST" novalidate>
+        <button type="submit" class="btn btn-default">Assign Road to Contractor</button>
+    </form>
 
-      <modal title="Login form" visible="showModal">
-      <form role="form" action = "http://127.0.0.1:8081/user_signup_get" method = "POST" novalidate>
+    <form role="form" action = "http://127.0.0.1:8081/button_add_official" method = "POST" novalidate>
+        <button type="submit" class="btn btn-default">Add Official</button>
+    </form>
+
+    <form role="form" action = "http://127.0.0.1:8081/button_add_contractor" method = "POST" novalidate>
+        <button type="submit" class="btn btn-default">Add Contractor</button>
+    </form>
+
+    <!-- <button ng-click="assignRoad()" class="btn btn-default">Assign Road to Contractor</button>
+		<button ng-click="addOfficial()" class="btn btn-default">Add Official</button>
+		<button ng-click="addContractor()" class="btn btn-default">Add Contractor</button> -->
+		<button ng-click="progress()" class="btn btn-default">Check Progress of the Roads</button>
+		<button ng-click="mantainance()" class="btn btn-default">Check Mantainance of the Roads</button>
+
+    <modal title="Enter Road ID" visible="showModal">
+      <form role="form" action = "http://127.0.0.1:8081/get_road_id" method = "POST" novalidate>
         <div class="form-group">
-          <input type="text" class="form-control" id="road_id" placeholder="Enter RoadID" />
+          <input type="text" class="form-control" id="road_id" name="roadid" placeholder="Enter RoadID" />
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

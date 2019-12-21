@@ -1,6 +1,19 @@
 var myApp = angular.module('myApp',[]);
 myApp.controller('govtCtrl', function ($scope) {
     $scope.showModal = false;
+
+    $scope.assignRoad = function(){
+            console.log("asd");
+            var path = window.location.pathname;
+            var pos = path.lastIndexOf("/");
+            var p = path.slice(0,pos+1);
+            var new_path = p+'assign_road.html';
+            console.log(new_path);
+            window.location.replace(new_path);
+            console.log(p);
+    };
+
+
     $scope.addOfficial = function(){
     	var path = window.location.pathname;
      	var pos = path.lastIndexOf("/");

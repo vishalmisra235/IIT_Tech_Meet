@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Govt Survey for progress</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+body {
+ background-color: #c8ded1;
+}
+</style>
+</head>
+<body>
+	<div class="cont_progress">
+		<h1>Govt Manual Survey for Progress</h1>
+		<form class="form-horizontal" action = "http://127.0.0.1:8081/govt_road_information" method = "POST" novalidate>
+			<div class="form-group">
+		        <label class="control-label col-sm-2" for="someID">Your ID</label>
+		        <div class="col-sm-4">
+		            <input type="text" class="form-control" id="cont_id" name="govtID" placeholder="Enter Your ID" >
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="roadID">Road ID</label>
+		        <div class="col-sm-4">
+		            <input type="text" class="form-control" id="road_id" name="roadID" placeholder="Enter Road ID" >
+		        </div>
+		    </div>
+		    <div class="form-group" style="display:flex; flex-direction: row; justify-content: right; align-items: right">
+		    	<label class="control-label col-sm-3" for="description">Start date</label>
+		    	<label class="control-label col-sm-1" for="description">End Date</label>
+		    	<label class="control-label col-sm-2" for="description">Percentage of work done</label>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Demolition and Removal</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date1" class="form-control">
+		            <input type="date" name="end_date1" class="form-control">
+		            <input type="number" name="percentage1" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Grading and Sloping</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date2" class="form-control">
+		            <input type="date" name="end_date2" class="form-control">
+		            <input type="number" name="percentage2" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Sub Base</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date3" class="form-control">
+		            <input type="date" name="end_date3" class="form-control">
+		            <input type="number" name="percentage3" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Proof Roll, undercutting and sub base repair</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date4" class="form-control">
+		            <input type="date" name="end_date4" class="form-control">
+		            <input type="number" name="percentage4" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Binder and Surface Course</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date5" class="form-control">
+		            <input type="date" name="end_date5" class="form-control">
+		            <input type="number" name="percentage5" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Installation of new asphalt surface</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date6" class="form-control">
+		            <input type="date" name="end_date6" class="form-control">
+		            <input type="number" name="percentage6" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Butt joints and transitions</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date7" class="form-control">
+		            <input type="date" name="end_date7" class="form-control">
+		            <input type="number" name="percentage7" class="form-control">
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-sm-2" for="description">Final Rollup</label>
+		        <div class="col-sm-4" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+		            <input type="date" name="start_date8" class="form-control">
+		            <input type="date" name="end_date8" class="form-control">
+		            <input type="number" name="percentage8" class="form-control">
+		        </div>
+		    </div>
+		    <button style="justify-content: center; align-items: center" type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

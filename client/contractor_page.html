@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+  <script>
+    var myApp = angular.module('ContractorApplication',[]);
+    myApp.controller('ContControl', function ($scope) {
+        // $scope.update_progress = function(){
+        //   var path = window.location.pathname;
+        //   var pos = path.lastIndexOf("/");
+        //   var p = path.slice(0,pos+1);
+        //   var new_path = p+'progress_update.html';
+        //   window.location.replace(new_path);
+        //   console.log(p);
+        // };
+        $scope.see_complaints = function(){
+          var path = window.location.pathname;
+          var pos = path.lastIndexOf("/");
+          var p = path.slice(0,pos+1);
+          var new_path = p+'contractor_page.html';
+          window.location.replace(new_path);
+          console.log(p);
+        };
+      });
+  </script>
+</head>
+<style >
+body {
+ background-color: #c8ded1;
+}
+div{
+  text-align: center;
+}
+</style>
+
+<body ng-app="ContractorApplication">
+  <div ng-controller="ContControl" class="container">
+    <div class="page-header"><h1>Choose your department</h1></div>
+    <div class="container btn-group btn-group-lg"><div>
+        <form role="form" action = "http://127.0.0.1:8081/button_update_progress" method = "POST" novalidate>
+          <button type="submit" class="btn btn-primary">Update Progress</button>
+        </form>
+        <form role="form" action = "http://127.0.0.1:8081/button_show_complaints" method = "POST" novalidate>
+          <button type="submit" class="btn btn-primary">Complaints</button>
+        </form>
+        
+    </div></div>
+  </div>
+</body>
+</html>
