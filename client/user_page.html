@@ -9,12 +9,21 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+body {
+ background-color: #c8ded1;
+}
+div{
+	text-align: center;
+}
+</style>
 <body ng-app="myApp">
-	<div ng-controller="userCtrl">
-		<h1>What to do?</h1>
-		<button ng-click="history()" class="btn btn-default">Check History</button>
-  		<button ng-click="profile()" class="btn btn-default">Check Your Profile</button>
-  		<button ng-click="complain()" class="btn btn-default">New Complaint</button>
-	</div>
+	<div ng-controller="userCtrl" class="container">
+		<h1 class="page-header">What to do?</h1>
+		<div class="btn-group btn-group-lg">
+		<button ng-click="history()" class="btn btn-primary">Check History</button>
+  		<button ng-click="profile()" class="btn btn-primary">Check Your Profile</button>
+  		<button ng-click="complain()" class="btn btn-primary">New Complaint</button>
+	</div></div>
 </body>
 </html>
